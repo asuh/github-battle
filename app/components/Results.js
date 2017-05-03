@@ -52,7 +52,7 @@ class Results extends React.Component {
 		}
 	}
 	componentDidMount() {
-		var players = queryString.parse(this.props.location.serach);
+		var players = queryString.parse(this.props.location.search);
 		api.battle([
 			players.playerOneName,
 			players.playerTwoName
