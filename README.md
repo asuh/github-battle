@@ -19,17 +19,16 @@ This will open the webpack dev-server running on port: 8080, by default.
 * [Webpack](https://webpack.js.org/)
 * [React](http://www.reactjs.org/)
 * [Babel](https://babeljs.io/)
-*
 * [Firebase](https://firebase.google.com/)
 
 
 ## Authors
 
-* **Micah** - [asuh](https://github.com/asuh)
+[Micah](https://github.com/asuh)
 
 ## License
 
-Unlicense [LICENSE.md](LICENSE.md) file for details.
+Unlicense - see [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
 
