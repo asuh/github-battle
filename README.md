@@ -32,4 +32,4 @@ Unlicense - see [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
 
-* [React Training](https://online.reacttraining.com/) - The highest rated React courses have ever been crated.
+[React Training](https://online.reacttraining.com/)
