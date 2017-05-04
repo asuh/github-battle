@@ -1,14 +1,12 @@
-var React = require('react');
-var PropTypes = require('prop-types');
-var queryString = require('query-string');
-var api = require('../utils/api');
-var Link = require('react-router-dom').Link;
-var PlayerPreview = require('./PlayerPreview');
-var Loading = require('./Loading');
+import React from 'react'
+import PropTypes from 'prop-types'
+import { parse } from 'query-string'
+import { battle } from '../utils/api'
+import { Link } from 'react-router-dom'
+import PlayerPreview from './PlayerPreview'
+import Loading from './Loading'
 
-function Profile(props) {
-	var info = props.info;
-
+function Profile({props, info}) {
 	return (
 		<PlayerPreview avatar={info.avatar_url} username={info.login}>
 			<ul className='space-list-items'>
@@ -52,8 +50,8 @@ class Results extends React.Component {
 		}
 	}
 	componentDidMount() {
-		var players = queryString.parse(this.props.location.search);
-		api.battle([
+		const players = parse(this.props.location.search);
+		battle([
 			players.playerOneName,
 			players.playerTwoName
 		]).then(function(results) {
@@ -77,10 +75,10 @@ class Results extends React.Component {
 		}.bind(this));
 	}
 	render() {
-		var error = this.state.error;
-		var winner = this.state.winner;
-		var loser = this.state.loser;
-		var loading = this.state.loading;
+		const error = this.state.error;
+		const winner = this.state.winner;
+		const loser = this.state.loser;
+		const loading = this.state.loading;
 
 		if (loading === true) {
 			return <Loading />
@@ -112,4 +110,4 @@ class Results extends React.Component {
 	}
 }
 
-module.exports = Results;
+export default Results;
