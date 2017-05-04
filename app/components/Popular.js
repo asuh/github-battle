@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { fetchPopularRepos } from '../utils/api'
 import Loading from './Loading'
 
-function SelectLanguage(props) {
+function SelectLanguage({ selectedLanguage, onSelect }) {
 	const languages = ['All', 'Javascript', 'Ruby', 'Java', 'CSS', 'Python'];
 
 	return (
@@ -11,8 +11,8 @@ function SelectLanguage(props) {
 			{languages.map((lang) => {
 				return (
 					<li
-						style={lang === props.selectedLanguage ? {color: '#d0021b'} : null}
-						onClick={props.onSelect.bind(null, lang)}
+						style={lang === selectedLanguage ? {color: '#d0021b'} : null}
+						onClick={onSelect.bind(null, lang)}
 						key={lang}>
 						{lang}
 					</li>
@@ -22,10 +22,10 @@ function SelectLanguage(props) {
 	)
 }
 
-function RepoGrid(props) {
+function RepoGrid({ repos }) {
 	return(
 		<ul className='popular-list'>
-			{props.repos.map((repo, index) => {
+			{repos.map((repo, index) => {
 				return (
 					<li key={repo.name} className='popular-item'>
 						<div className='popular-rank'>#{index + 1}</div>
