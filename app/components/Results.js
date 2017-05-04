@@ -54,9 +54,9 @@ class Results extends React.Component {
 		battle([
 			players.playerOneName,
 			players.playerTwoName
-		]).then(function(results) {
+		]).then((results) => {
 			if (results === null) {
-				return this.setState(function() {
+				return this.setState(() => {
 					return {
 						error: 'Looks like there was an error. Check that both users exist on Github',
 						loading: false,
@@ -64,7 +64,7 @@ class Results extends React.Component {
 				});
 			}
 
-			this.setState(function() {
+			this.setState(() => {
 				return {
 					error: null,
 					winner: results[0],
@@ -72,13 +72,10 @@ class Results extends React.Component {
 					loading: false
 				}
 			});
-		}.bind(this));
+		});
 	}
 	render() {
-		const error = this.state.error;
-		const winner = this.state.winner;
-		const loser = this.state.loser;
-		const loading = this.state.loading;
+		const { error, winner, loser, loading } = this.state;
 
 		if (loading === true) {
 			return <Loading />
